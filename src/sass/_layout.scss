@@ -1,0 +1,18 @@
+.main02-layout {
+  width: 90%;
+  padding: 20px 5% 0;
+}
+
+.l-container {
+  width: 100%;
+  &-main {
+    width: 100%;
+  }
+  &-main02 {
+    @extend .main02-layout;
+  }
+}
+
+.at-pwd-form {
+  @extend .main02-layout;
+}

@@ -1,11 +1,10 @@
-const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const extractSass = new ExtractTextPlugin('css/[name].css');
+const extractSass = new ExtractTextPlugin('[name].css');
 
 module.exports = [
   {
@@ -37,7 +36,7 @@ module.exports = [
         {
           test: /\.(css)$/,
           include: /node_modules/,
-          loader: [
+          loaders: [
             'style-loader',
             'css-loader',
           ],
@@ -49,14 +48,13 @@ module.exports = [
       extensions: ['.js', '.jsx'],
     },
     plugins: [
-      new webpack.optimize.UglifyJsPlugin(),
       new HtmlWebpackPlugin({
         template: `${__dirname}/src/index.html`,
       }),
       new CopyWebpackPlugin([
         {
           from: path.resolve(__dirname, 'src/images/'),
-          to: path.resolve(__dirname, 'dist/images'),
+          to: path.resolve(__dirname, 'dist/images/'),
         },
       ]),
       new ImageminPlugin({
@@ -73,7 +71,7 @@ module.exports = [
     },
     output: {
       path: path.resolve(__dirname, 'dist/css'),
-      filename: '[name],css',
+      filename: '[name].css',
     },
     module: {
       rules: [
@@ -88,7 +86,7 @@ module.exports = [
                 },
               },
               {
-                loader: 'sass-loader?outputStyle=compresed',
+                loader: 'sass-loader?outputStyle=compressed',
               },
             ],
             fallback: 'style-loader',
