@@ -24,13 +24,12 @@ module.exports = [
       open: true,
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js[x]?$/,
           exclude: /node_modules/,
-          loader: 'babel-loader',
-          query: {
-            presets: ['react', 'env', 'es2015', 'stage-0'],
+          use: {
+            loader: 'babel-loader',
           },
         },
         {
@@ -76,21 +75,28 @@ module.exports = [
     module: {
       rules: [
         {
-          test: /\.(scss)$/,
-          use: extractSass.extract({
+          test: /\.scss$/,
+          use: ExtractTextPlugin.extract({
             use: [
               {
                 loader: 'css-loader',
-                options: {
-                  sourceMap: true,
-                },
+                options: { url: false },
               },
-              {
-                loader: 'sass-loader?outputStyle=compressed',
-              },
+              'sass-loader',
             ],
-            fallback: 'style-loader',
           }),
+        },
+        {
+          test: /\.svg$/,
+          loaders: [
+            'babel-loader',
+            {
+              loader: 'react-svg-loader',
+              query: {
+                jsx: true,
+              },
+            },
+          ],
         },
       ],
     },
