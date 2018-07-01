@@ -80,9 +80,22 @@ module.exports = [
             use: [
               {
                 loader: 'css-loader',
-                options: { url: false },
+                options: {
+                  url: false,
+                  sourceMap: true,
+                  minimize: true,
+                },
               },
-              'sass-loader',
+              {
+                loader: 'sass-loader',
+                options: {
+                  outputStyle: 'compressed',
+                  sourceMap: true,
+                  includePaths: [
+                    './src',
+                  ],
+                },
+              },
             ],
           }),
         },
