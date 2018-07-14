@@ -1,16 +1,17 @@
 import React from 'react';
-import Header from '../components/Header';
-import Sns from '../components/Sns';
-import FooterNav from '../components/FooterNav';
-import CopyRight from '../components/CopyRight';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Top from './Top';
+import About from './About';
 
 const App = () => (
-  <div>
-    <Header />
-    <Sns />
-    <FooterNav />
-    <CopyRight />
-  </div>
+  <BrowserRouter>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Top} />
+        <Route path="/about" component={About} />
+      </Switch>
+    </div>
+  </BrowserRouter>
 );
 
 export default App;
