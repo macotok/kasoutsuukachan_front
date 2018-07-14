@@ -1,8 +1,12 @@
 import React from 'react';
 import Header from '../components/Header';
+import Sns from '../components/Sns';
 
 const App = () => (
-  <Header />
+  <div>
+    <Header />
+    <Sns />
+  </div>
 );
 
 export default App;
