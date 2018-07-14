@@ -1,15 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
-import Sns from '../components/Sns';
-import FooterNav from '../components/FooterNav';
-import CopyRight from '../components/CopyRight';
+import Footer from '../components/Footer';
 
 const Top = () => (
   <div>
     <Header />
-    <Sns />
-    <FooterNav />
-    <CopyRight />
+    <Footer />
   </div>
 );
 

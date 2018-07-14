@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
-const FooterNav = () => (
+const Nav = () => (
   <nav className="m-list02">
     <ul className="m-list02-listBlock">
       <li className="m-list02-list">
@@ -24,4 +24,4 @@ const FooterNav = () => (
   </nav>
 );
 
-export default withRouter(FooterNav);
+export default withRouter(Nav);
