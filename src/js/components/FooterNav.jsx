@@ -1,25 +1,27 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const FooterNav = () => (
   <nav className="m-list02">
     <ul className="m-list02-listBlock">
       <li className="m-list02-list">
-        <a href="/" className="m-list02-link">
+        <Link to="/about" className="m-list02-link">
           このサイトについて
-        </a>
+        </Link>
       </li>
       <li className="m-list02-list">
-        <a href="/" className="m-list02-link">
+        <Link to="/terms" className="m-list02-link">
           利用規約
-        </a>
+        </Link>
       </li>
       <li className="m-list02-list">
-        <a href="/" className="m-list02-link">
+        <Link to="/contact" className="m-list02-link">
           お問い合わせ
-        </a>
+        </Link>
       </li>
     </ul>
   </nav>
 );
 
-export default FooterNav;
+export default withRouter(FooterNav);

@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import Header from '../components/Header';
 import Sns from '../components/Sns';
 import FooterNav from '../components/FooterNav';
@@ -14,4 +13,4 @@ const Top = () => (
   </div>
 );
 
-export default withRouter(Top);
+export default Top;
