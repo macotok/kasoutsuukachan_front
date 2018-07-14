@@ -1,10 +1,9 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-
-const extractSass = new ExtractTextPlugin('[name].css');
+const autoprefixer = require('autoprefixer');
 
 module.exports = [
   {
@@ -63,6 +62,11 @@ module.exports = [
         },
       }),
     ],
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+    },
   },
   {
     entry: {
@@ -70,51 +74,52 @@ module.exports = [
     },
     output: {
       path: path.resolve(__dirname, 'dist/css'),
-      filename: '[name].css',
     },
     module: {
       rules: [
         {
           test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  url: false,
-                  sourceMap: true,
-                  minimize: true,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: {
+                  safe: true,
                 },
               },
-              {
-                loader: 'sass-loader',
-                options: {
-                  outputStyle: 'compressed',
-                  sourceMap: true,
-                  includePaths: [
-                    './src',
-                  ],
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                autoprefixer: {
+                  browsers: ['last 2 versions'],
                 },
+                plugins: () => [
+                  autoprefixer,
+                ],
               },
-            ],
-          }),
+            },
+            {
+              loader: 'sass-loader',
+              options: {},
+            },
+          ],
+        },
+        {
+          test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/,
+          loader: 'url-loader?limit=100000',
         },
         {
           test: /\.svg$/,
-          loaders: [
-            'babel-loader',
-            {
-              loader: 'react-svg-loader',
-              query: {
-                jsx: true,
-              },
-            },
-          ],
+          loader: 'svg-inline-loader',
         },
       ],
     },
     plugins: [
-      extractSass,
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+      }),
     ],
   },
 ];
