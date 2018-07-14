@@ -1,12 +1,8 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import App from './container/App';
 
-const App = () => (
-  <p>
-    Hello World
-  </p>
+ReactDOM.render(
+  <App />,
+  document.getElementById('app'),
 );
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDom.render(<App />, document.getElementById('app'));
-});
