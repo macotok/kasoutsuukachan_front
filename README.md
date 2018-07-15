@@ -6,3 +6,4 @@
 - [サンプルでreact-router v4を理解してみよう。](https://qiita.com/park-jh/items/b4c7b16ea9eb0cf44942)
 - [react-routerのページ遷移をhandleで行う時にはwithRouterを使う](https://qiita.com/junara/items/a4a98c27dc23fd53ebb9)
 - [faker公式サイト](https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html)
+- [React.jsの知っておいて損はないTips](https://qiita.com/endam/items/1bde821c4b29f9b663da)

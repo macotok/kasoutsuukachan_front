@@ -4,11 +4,16 @@ const db = {
   thread: [],
 };
 
-for (let i = 0; i < 20; i += 1) {
+const ticker = [
+  'BTC', 'ETH', 'ETC', 'LSK', 'FCT', 'XMR', 'REP', 'XRP', 'ZEC', 'XEM', 'LTC', 'DASH', 'BCH', 'BNB', 'MONA',
+  'NEO', 'TRX', 'WAVES', 'ZAIF', 'NANJ', 'XP', 'BITMEX', 'EOS',
+];
+
+for (let i = 0; i < ticker.length; i += 1) {
   db.thread.push({
     id: i + 1,
-    ticker: faker.random.word(),
-    title: faker.random.word(),
+    ticker: ticker[i],
+    title: ticker[i],
     nowPrice: faker.random.number(1000),
     lastPrice: faker.random.number(1000),
     createdAt: faker.date.past(),
