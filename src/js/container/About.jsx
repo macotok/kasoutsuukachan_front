@@ -49,9 +49,9 @@ const About = () => (
           </dl>
         </div>
       </div>
+      <BackHome />
+      <Footer />
     </div>
-    <BackHome />
-    <Footer />
   </div>
 );
 

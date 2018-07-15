@@ -500,9 +500,9 @@ const Terms = () => (
           </p>
         </div>
       </div>
+      <BackHome />
+      <Footer />
     </div>
-    <BackHome />
-    <Footer />
   </div>
 );
 
