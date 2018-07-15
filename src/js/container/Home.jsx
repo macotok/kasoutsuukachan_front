@@ -2,11 +2,11 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const Top = () => (
+const Home = () => (
   <div>
     <Header />
     <Footer />
   </div>
 );
 
-export default Top;
+export default Home;

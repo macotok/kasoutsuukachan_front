@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import BackHome from '../components/BackHome';
 import Footer from '../components/Footer';
 
 const About = () => (
@@ -49,6 +50,7 @@ const About = () => (
         </div>
       </div>
     </div>
+    <BackHome />
     <Footer />
   </div>
 );
