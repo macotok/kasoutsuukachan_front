@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const Nav = () => (
@@ -24,4 +23,4 @@ const Nav = () => (
   </nav>
 );
 
-export default withRouter(Nav);
+export default Nav;

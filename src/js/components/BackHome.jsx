@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const BackHome = () => (
@@ -10,4 +9,4 @@ const BackHome = () => (
   </p>
 );
 
-export default withRouter(BackHome);
+export default BackHome;

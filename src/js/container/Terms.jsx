@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import BackHome from '../components/BackHome';
@@ -506,4 +505,4 @@ const Terms = () => (
   </div>
 );
 
-export default withRouter(Terms);
+export default Terms;
