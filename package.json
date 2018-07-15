@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --watch --mode development --open",
+    "start": "webpack-dev-server --watch --mode development --open --inline --content-base . --history-api-fallback",
     "build": "webpack --mode development --open",
     "lint": "eslint ."
   },
