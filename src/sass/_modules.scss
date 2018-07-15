@@ -32,6 +32,7 @@ $eos: url(../images/icons/eos.svg);
 /* border-radius */
 $border-radius: 3px;
 $keyColor: #1253A4; // 濃い青 「いいね」「loader」「スレッド追加」で使用
+$linkColor: #4374e0;
 
 /*------------------------------------------------
 	ヘッダー
@@ -605,8 +606,11 @@ $keyColor: #1253A4; // 濃い青 「いいね」「loader」「スレッド追�
     margin-bottom: 40px;
   }
   &-link {
-    color: #4374e0;
+    color: $linkColor;
     text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -1089,7 +1093,7 @@ $keyColor: #1253A4; // 濃い青 「いいね」「loader」「スレッド追�
     }
   }
   &-link {
-    color: #4374e0;
+    color: $linkColor;
     text-decoration: underline;
     &:hover {
       text-decoration: none;

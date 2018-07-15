@@ -41,7 +41,7 @@ const Terms = () => (
                   <ul className="m-list01-listBLock03">
                     <li className="m-list01-listText02">
                       a.本サイト：ウェブサイト「仮想通貨.ch」（
-                      <Link to="/">
+                      <Link to="/" className="m-list01-link">
                         https://kasoutsuukachan.com/
                       </Link>
                       ）をいいます。
