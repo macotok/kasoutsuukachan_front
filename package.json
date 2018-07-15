@@ -27,6 +27,7 @@
     "babel-eslint": "^8.2.5",
     "babel-loader": "^8.0.0-beta",
     "copy-webpack-plugin": "^4.5.2",
+    "faker": "^4.1.0",
     "file-loader": "^1.1.11",
     "history": "^4.7.2",
     "imagemin-webpack-plugin": "^2.1.5",
