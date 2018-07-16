@@ -2,6 +2,8 @@ import faker from 'faker';
 
 const db = {
   thread: [],
+  post: [],
+  reaction: [],
 };
 
 const ticker = [
@@ -16,6 +18,32 @@ for (let i = 0; i < ticker.length; i += 1) {
     title: ticker[i],
     nowPrice: faker.random.number(10000),
     lastPrice: faker.random.number(10000),
+    createdAt: faker.date.past(),
+    updateAt: faker.date.future(),
+  });
+}
+
+for (let i = 0; i < 20; i += 1) {
+  db.post.push({
+    id: i,
+    name: faker.name.firstName(),
+    text: faker.random.words(),
+    replyNumber: null,
+    replyBoolean: null,
+    createdAt: faker.date.past(),
+    updateAt: faker.date.future(),
+    autoIncrement: i,
+    threadId: i,
+    ticker: ticker[faker.random.number(ticker.length)],
+  });
+}
+
+for (let i = 0; i < 20; i += 1) {
+  db.reaction.push({
+    _id: i,
+    postId: i,
+    iineCount: faker.random.number(100),
+    threadId: i,
     createdAt: faker.date.past(),
     updateAt: faker.date.future(),
   });
