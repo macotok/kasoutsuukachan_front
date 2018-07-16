@@ -1,5 +1,8 @@
 # kasoutsuukachan_front
 
+meteorで作ったwebアプリ「[仮想通貨ちゃん](https://kasoutsuukachan.com/)」のフロント側をReactで構築する。
+サーバー側はリポジトリを分けてRailsで作る予定。
+
 ## 参考になったサイト
 
 - [【react-router】ハマった「browserHistoryをhistoryに渡すと」「Failed to load resource: the server responded with a status of 404 (Not Found)」](https://kenjimorita.jp/react-router-browserhistory-history-failed-to-load-resource-the-server-responded-w/)
