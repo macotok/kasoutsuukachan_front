@@ -26,6 +26,15 @@ class ThreadList extends React.Component {
     return `${this.commaShape(priceFloor)}円`;
   }
 
+  priceBoolean(nowPrice, lastPrice) {
+    if (!lastPrice) return false;
+    const calcResult = this.priceDifferenceCalc(nowPrice, lastPrice);
+    if (calcResult > 0) {
+      return 'plus';
+    }
+    return 'minus';
+  }
+
   render() {
     return (
       <div className="m-threadList01">
@@ -41,7 +50,7 @@ class ThreadList extends React.Component {
                   {t.title}
                 </p>
                 <div className="m-threadList01-right">
-                  <p className="m-threadList01-lastPrice">
+                  <p className={`m-threadList01-lastPrice ${this.priceBoolean(t.nowPrice, t.lastPrice)}`}>
                     {this.rate(t.nowPrice, t.lastPrice)}
                   </p>
                   <p className="m-threadList01-price">
