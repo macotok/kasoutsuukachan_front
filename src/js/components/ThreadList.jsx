@@ -1,12 +1,23 @@
 import React from 'react';
 import db from '../../../api/stub';
-import { floor, commaShape } from '../libraries/Utils';
+import { commaShape, floor, priceDifferenceCalc } from '../libraries/Utils';
 
 class ThreadList extends React.Component {
   constructor(props) {
     super(props);
     this.floor = floor;
     this.commaShape = commaShape;
+    this.priceDifferenceCalc = priceDifferenceCalc;
+  }
+
+  rate(nowPrice, lastPrice) {
+    if (!lastPrice) return false;
+    const calcResult = this.priceDifferenceCalc(nowPrice, lastPrice);
+    if (calcResult === 0) return false;
+    if (calcResult > 0) {
+      return `+${calcResult}%`;
+    }
+    return `${calcResult}%`;
   }
 
   priceShape(nowPrice) {
@@ -31,7 +42,7 @@ class ThreadList extends React.Component {
                 </p>
                 <div className="m-threadList01-right">
                   <p className="m-threadList01-lastPrice">
-                    {t.lastPrice}
+                    {this.rate(t.nowPrice, t.lastPrice)}
                   </p>
                   <p className="m-threadList01-price">
                     {this.priceShape(t.nowPrice)}

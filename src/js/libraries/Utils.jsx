@@ -11,3 +11,10 @@ export const commaShape = (num) => {
   }
   return commaCheck;
 };
+
+export const priceDifferenceCalc = (nowPrice, lastPrice) => {
+  const calcDiff = nowPrice - lastPrice;
+  const calc = (calcDiff / lastPrice) * 100;
+  const calcResult = floor(calc, 2);
+  return calcResult;
+};
