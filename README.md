@@ -7,3 +7,4 @@
 - [react-routerのページ遷移をhandleで行う時にはwithRouterを使う](https://qiita.com/junara/items/a4a98c27dc23fd53ebb9)
 - [faker公式サイト](https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html)
 - [React.jsの知っておいて損はないTips](https://qiita.com/endam/items/1bde821c4b29f9b663da)
+- [ES2016ではMath.powの代わりに**を使いましょう](https://hacknote.jp/archives/29041/)

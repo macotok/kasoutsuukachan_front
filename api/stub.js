@@ -14,8 +14,8 @@ for (let i = 0; i < ticker.length; i += 1) {
     id: i + 1,
     ticker: ticker[i],
     title: ticker[i],
-    nowPrice: faker.random.number(1000),
-    lastPrice: faker.random.number(1000),
+    nowPrice: faker.random.number(10000),
+    lastPrice: faker.random.number(10000),
     createdAt: faker.date.past(),
     updateAt: faker.date.future(),
   });
