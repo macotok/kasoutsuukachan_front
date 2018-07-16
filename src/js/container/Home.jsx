@@ -7,7 +7,9 @@ const Home = () => (
   <div>
     <Header />
     <ThreadList />
-    <Footer />
+    <Footer
+      isBackHome={false}
+    />
   </div>
 );
 
