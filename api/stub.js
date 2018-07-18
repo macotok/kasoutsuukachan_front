@@ -3,7 +3,6 @@ import faker from 'faker';
 const db = {
   thread: [],
   post: [],
-  reaction: [],
 };
 
 const ticker = [
@@ -13,7 +12,7 @@ const ticker = [
 
 for (let i = 0; i < ticker.length; i += 1) {
   db.thread.push({
-    id: i + 1,
+    id: i,
     ticker: ticker[i],
     title: ticker[i],
     nowPrice: faker.random.number(10000),
@@ -30,20 +29,10 @@ for (let i = 0; i < 20; i += 1) {
     text: faker.random.words(),
     replyNumber: null,
     replyBoolean: null,
-    createdAt: faker.date.past(),
-    updateAt: faker.date.future(),
     autoIncrement: i,
-    threadId: i,
-    ticker: ticker[faker.random.number(ticker.length)],
-  });
-}
-
-for (let i = 0; i < 20; i += 1) {
-  db.reaction.push({
-    _id: i,
-    postId: i,
-    iineCount: faker.random.number(100),
-    threadId: i,
+    threadId: db.thread[faker.random.number(db.thread.length - 1)].id,
+    ticker: ticker[faker.random.number(ticker.length - 1)],
+    good: faker.random.number(100),
     createdAt: faker.date.past(),
     updateAt: faker.date.future(),
   });

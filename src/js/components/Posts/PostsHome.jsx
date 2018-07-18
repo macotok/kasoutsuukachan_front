@@ -27,7 +27,7 @@ const PostsHome = () => (
                 いいね
               </p>
               <p className="m-postsList-iineCount">
-                0
+                {p.good}
               </p>
               <p className={`m-postsList-ticker m-postsList-${p.ticker}`} />
             </div>
