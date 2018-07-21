@@ -25,8 +25,6 @@ const postAction = {
 
 store.dispatch(postAction);
 
-console.log(store.getState());
-
 const App = () => (
   <BrowserRouter>
     <div>
