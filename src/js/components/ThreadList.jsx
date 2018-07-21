@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { commaShape, floor, priceDifferenceCalc } from '../libraries/Utils';
 
@@ -46,7 +47,7 @@ class ThreadList extends React.Component {
         <ul className="m-threadList01-block">
           {thread.map(t => (
             <li className="m-threadList01-list" key={t.id}>
-              <a href={`/${t.ticker}`}>
+              <Link to={`/${t.id}`}>
                 <div className={`m-threadList01-icon m-threadList01-${t.ticker}`} />
                 <p className="m-threadList01-text">
                   {t.title}
@@ -59,7 +60,7 @@ class ThreadList extends React.Component {
                     {this.priceShape(t.nowPrice)}
                   </p>
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
