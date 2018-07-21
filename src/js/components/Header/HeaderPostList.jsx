@@ -39,9 +39,9 @@ class HeaderPostList extends React.Component {
 
   render() {
     const { match, ticker } = this.props;
-    const { id } = match.params;
+    const tickerName = match.params.ticker;
     const tickerPage = ticker.find(t => (
-      t.id === parseInt(id, 10)
+      t.ticker === tickerName
     ));
 
     return (

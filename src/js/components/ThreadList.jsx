@@ -47,7 +47,7 @@ class ThreadList extends React.Component {
         <ul className="m-threadList01-block">
           {thread.map(t => (
             <li className="m-threadList01-list" key={t.id}>
-              <Link to={`/${t.id}`}>
+              <Link to={`/${t.ticker}`}>
                 <div className={`m-threadList01-icon m-threadList01-${t.ticker}`} />
                 <p className="m-threadList01-text">
                   {t.title}
