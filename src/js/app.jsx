@@ -16,15 +16,6 @@ const allReducers = combineReducers({
 
 const store = createStore(allReducers);
 
-const postAction = {
-  type: 'updatePost',
-  payload: {
-    text: 'first post',
-  },
-};
-
-store.dispatch(postAction);
-
 const App = () => (
   <BrowserRouter>
     <div>

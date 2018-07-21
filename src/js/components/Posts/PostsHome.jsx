@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import DATE_FORMAT from '../../defines/Defines';
 
 const PostsHome = (props) => {
   const { post } = props;
@@ -19,7 +20,7 @@ const PostsHome = (props) => {
                   {p.name}
                 </p>
                 <p className="m-postsList-updateAt">
-                  {moment(p.updateAt).format('YYYY/MM/DD/ HH:mm')}
+                  {moment(p.updateAt).format(DATE_FORMAT)}
                 </p>
               </div>
               <p className="m-postsList-text">
