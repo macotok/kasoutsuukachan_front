@@ -1,3 +1,7 @@
-export default function threadReducer(state = [], action) {
-  return state;
+import db from '../../../api/stub';
+
+function threadReducer() {
+  return db.thread;
 }
+
+export default threadReducer;

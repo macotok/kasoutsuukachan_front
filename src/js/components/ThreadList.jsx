@@ -1,5 +1,6 @@
 import React from 'react';
-import db from '../../../api/stub';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { commaShape, floor, priceDifferenceCalc } from '../libraries/Utils';
 
 class ThreadList extends React.Component {
@@ -36,13 +37,14 @@ class ThreadList extends React.Component {
   }
 
   render() {
+    const { thread } = this.props;
     return (
       <div className="m-threadList01">
         <h2 className="m-title01">
           スレッド一覧
         </h2>
         <ul className="m-threadList01-block">
-          {db.thread.map(t => (
+          {thread.map(t => (
             <li className="m-threadList01-list" key={t.id}>
               <a href={`/${t.ticker}`}>
                 <div className={`m-threadList01-icon m-threadList01-${t.ticker}`} />
@@ -66,4 +68,18 @@ class ThreadList extends React.Component {
   }
 }
 
-export default ThreadList;
+ThreadList.propTypes = {
+  thread: PropTypes.arrayOf(PropTypes.shape({})),
+};
+
+ThreadList.defaultProps = {
+  thread: [],
+};
+
+const mapStateToProps = state => (
+  {
+    thread: state.thread,
+  }
+);
+
+export default connect(mapStateToProps)(ThreadList);
