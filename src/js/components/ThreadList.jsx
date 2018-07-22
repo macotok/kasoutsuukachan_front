@@ -2,39 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { commaShape, floor, priceDifferenceCalc } from '../libraries/Utils';
+import { rate, priceShape, priceBoolean } from '../libraries/Utils';
 
 class ThreadList extends React.Component {
   constructor(props) {
     super(props);
-    this.floor = floor;
-    this.commaShape = commaShape;
-    this.priceDifferenceCalc = priceDifferenceCalc;
-  }
-
-  rate(nowPrice, lastPrice) {
-    if (!lastPrice) return false;
-    const calcResult = this.priceDifferenceCalc(nowPrice, lastPrice);
-    if (calcResult === 0) return false;
-    if (calcResult > 0) {
-      return `+${calcResult}%`;
-    }
-    return `${calcResult}%`;
-  }
-
-  priceShape(nowPrice) {
-    if (!nowPrice) return false;
-    const priceFloor = this.floor(nowPrice, 2);
-    return `${this.commaShape(priceFloor)}円`;
-  }
-
-  priceBoolean(nowPrice, lastPrice) {
-    if (!lastPrice) return false;
-    const calcResult = this.priceDifferenceCalc(nowPrice, lastPrice);
-    if (calcResult > 0) {
-      return 'plus';
-    }
-    return 'minus';
+    this.rate = rate;
+    this.priceShape = priceShape;
+    this.priceBoolean = priceBoolean;
   }
 
   render() {
