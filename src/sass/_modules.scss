@@ -1216,19 +1216,17 @@ $linkColor: #4374e0;
   &-updateAt {
     font-size: 80%;
   }
-  &-reply {
-    a {
-      color: #2b87ae;
-      font-size: 85%;
-      text-decoration: none;
-      background: #c5dee9;
-      padding: 5px 7px;
-      border-radius: 3px;
-      cursor: pointer;
-    }
+  &-replyLink {
+    color: #2b87ae;
+    font-size: 85%;
+    text-decoration: none;
+    background: #c5dee9;
+    padding: 5px 7px;
+    border-radius: 3px;
+    cursor: pointer;
   }
   &-replyNum {
-    a.active {
+    .active {
       color: #2b87ae;
       font-size: 75%;
       text-decoration: none;
