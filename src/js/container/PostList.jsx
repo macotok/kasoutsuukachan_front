@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderPostList from '../components/Header/HeaderPostList';
-import PageScroll from '../components/PageScroll';
+import PageScroll from '../components/Utils/PageScroll';
 import PostsList from '../components/Posts/PostsList';
 
 const PostList = props => (

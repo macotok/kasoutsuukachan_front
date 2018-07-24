@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PostButton from '../Utils/PostButton';
 import { rate, priceShape, priceBoolean } from '../../libraries/Utils';
 
 const HeaderPostList = (props) => {
@@ -29,9 +30,7 @@ const HeaderPostList = (props) => {
           </div>
         </div>
         <div className="m-header02-btn">
-          <button type="button" className="m-header02-icon">
-            &#xf12c;
-          </button>
+          <PostButton />
         </div>
       </div>
     </header>
