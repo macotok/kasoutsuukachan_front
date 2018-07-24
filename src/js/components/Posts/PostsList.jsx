@@ -5,16 +5,11 @@ import moment from 'moment';
 import DATE_FORMAT from '../../defines/Defines';
 
 const PostsList = (props) => {
-  const { match, post } = props;
-  const tickerName = match.params.ticker;
-  const tickerPosts = post.filter(p => (
-    p.ticker === tickerName
-  ));
-
+  const { tickerPostList } = props;
   return (
     <div className="m-postsList">
       <ul className="m-postsList-block">
-        {tickerPosts.map(t => (
+        {tickerPostList.map(t => (
           <li className="m-postsList-list" key={t.id}>
             <div className="m-postsList-information">
               <p className="m-postsList-increment">
@@ -57,22 +52,19 @@ const PostsList = (props) => {
 };
 
 PostsList.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
-  }).isRequired,
-  post: PropTypes.arrayOf(PropTypes.shape({})),
+  tickerPostList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
-PostsList.defaultProps = {
-  post: [],
-};
+const mapStateToProps = (state, props) => {
+  const { match } = props;
+  const postList = state.post;
+  const tickerPostList = postList.filter(p => (
+    p.ticker === match.params.ticker
+  ));
 
-const mapStateToProps = state => (
-  {
-    post: state.post,
-  }
-);
+  return {
+    tickerPostList,
+  };
+};
 
 export default connect(mapStateToProps)(PostsList);
