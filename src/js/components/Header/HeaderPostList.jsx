@@ -5,12 +5,7 @@ import { connect } from 'react-redux';
 import { rate, priceShape, priceBoolean } from '../../libraries/Utils';
 
 const HeaderPostList = (props) => {
-  const { match, ticker } = props;
-  const tickerName = match.params.ticker;
-  const tickerPage = ticker.find(t => (
-    t.ticker === tickerName
-  ));
-
+  const { tickerList } = props;
   return (
     <header className="m-header02">
       <div className="m-header02-inner">
@@ -20,18 +15,23 @@ const HeaderPostList = (props) => {
           </Link>
         </div>
         <div className="m-header02-title">
-          <div className={`m-header02-ticker m-header02-${tickerPage.ticker}`} />
+          <div className={`m-header02-ticker m-header02-${tickerList.ticker}`} />
           <h1>
-            {tickerPage.title}
+            {tickerList.title}
           </h1>
           <div className="m-header02-priceBlock">
-            <p className={`m-header02-lastPrice ${priceBoolean(tickerPage.nowPrice, tickerPage.lastPrice)}`}>
-              {rate(tickerPage.nowPrice, tickerPage.lastPrice)}
+            <p className={`m-header02-lastPrice ${priceBoolean(tickerList.nowPrice, tickerList.lastPrice)}`}>
+              {rate(tickerList.nowPrice, tickerList.lastPrice)}
             </p>
             <p className="m-header02-price">
-              {priceShape(tickerPage.nowPrice)}
+              {priceShape(tickerList.nowPrice)}
             </p>
           </div>
+        </div>
+        <div className="m-header02-btn">
+          <button type="button" className="m-header02-icon">
+            &#xf12c;
+          </button>
         </div>
       </div>
     </header>
@@ -39,18 +39,19 @@ const HeaderPostList = (props) => {
 };
 
 HeaderPostList.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
-  }).isRequired,
-  ticker: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  tickerList: PropTypes.shape({}).isRequired,
 };
 
-const mapStateToProps = state => (
-  {
-    ticker: state.thread,
-  }
-);
+const mapStateToProps = (state, props) => {
+  const { match } = props;
+  const threadList = state.thread;
+  const tickerList = threadList.find(t => (
+    t.ticker === match.params.ticker
+  ));
+
+  return {
+    tickerList,
+  };
+};
 
 export default connect(mapStateToProps)(HeaderPostList);

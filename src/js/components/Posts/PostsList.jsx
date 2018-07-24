@@ -52,7 +52,11 @@ const PostsList = (props) => {
 };
 
 PostsList.propTypes = {
-  tickerPostList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  tickerPostList: PropTypes.arrayOf(PropTypes.shape({})),
+};
+
+PostsList.defaultProps = {
+  tickerPostList: [],
 };
 
 const mapStateToProps = (state, props) => {
