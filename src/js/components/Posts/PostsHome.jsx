@@ -6,13 +6,14 @@ import DATE_FORMAT from '../../defines/Defines';
 
 const PostsHome = (props) => {
   const { post } = props;
+  const postList = post.slice(-10);
   return (
     <div className="m-postsList m-postsListTop">
       <h2 className="m-title01">
         最新投稿一覧
       </h2>
       <ul className="m-postsList-block">
-        {post.map(p => (
+        {postList.map(p => (
           <li className="m-postsList-list" key={p.id}>
             <a href={`/${p.ticker}`} className="m-postsList-link02">
               <div className="m-postsList-information">
