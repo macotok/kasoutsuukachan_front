@@ -5,8 +5,7 @@ import moment from 'moment';
 import DATE_FORMAT from '../../defines/Defines';
 
 const PostsHome = (props) => {
-  const { post } = props;
-  const postList = post.slice(-10);
+  const { postList } = props;
   return (
     <div className="m-postsList m-postsListTop">
       <h2 className="m-title01">
@@ -45,17 +44,18 @@ const PostsHome = (props) => {
 };
 
 PostsHome.propTypes = {
-  post: PropTypes.arrayOf(PropTypes.shape({})),
+  postList: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 PostsHome.defaultProps = {
-  post: [],
+  postList: [],
 };
 
-const mapStateToProps = state => (
-  {
-    post: state.post,
-  }
-);
+const mapStateToProps = (state) => {
+  const postList = state.post.slice(-10);
+  return {
+    postList,
+  };
+};
 
 export default connect(mapStateToProps)(PostsHome);
