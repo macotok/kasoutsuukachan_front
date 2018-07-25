@@ -1,14 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Dialog from '@material-ui/core/Dialog';
-import Slide from '@material-ui/core/Slide';
+import { Dialog, Slide, TextField } from '@material-ui/core/';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import { Send, Eject } from '@material-ui/icons';
+
+const styles = theme => ({
+  button: {
+    margin: '10px 0',
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
+  },
+});
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
 }
 
 const PostDialog = (props) => {
-  const { isOpen, closeDialog } = props;
+  const { isOpen, closeDialog, classes } = props;
+
   return (
     <div>
       <Dialog
@@ -29,22 +41,46 @@ const PostDialog = (props) => {
               </p>
               <form className="m-modal02-post">
                 <div className="m-modal02-postHeader">
-                  <input type="text" name="name" placeholder="名無しの仮想通貨ちゃん" maxLength="14" className="m-modal02-postName" />
+                  <TextField
+                    autoComplete="off"
+                    label="名前"
+                    type="text"
+                    name="name"
+                    placeholder="名無しの仮想通貨ちゃん"
+                    className="m-modal02-postName"
+                    margin="normal"
+                  />
                   <p className="m-modal02-postReplyNumber"></p>
                   <p className="m-modal02-postCount">
                     300
                   </p>
                 </div>
                 <div className="m-modal02-postInner">
-                  <textarea className="m-modal02-postTextarea" name="text" />
-                  <input className="m-modal02-postSubmit" type="submit" value="投稿" />
+                  <div>
+                    <TextField
+                      label="投稿"
+                      name="text"
+                      multiline
+                      rows="10"
+                      rowsMax="10"
+                      className="m-modal02-postTextarea"
+                      margin="normal"
+                    />
+                  </div>
+                  <div>
+                    <Button variant="contained" color="primary" className={`m-modal02-postSubmit ${classes.button}`}>
+                      投稿
+                      <Send className={classes.rightIcon} />
+                    </Button>
+                  </div>
                 </div>
               </form>
-              <p className="m-modal02-close02 is-modalClose">
-                <button type="button" onClick={closeDialog}>
+              <div>
+                <Button variant="contained" color="default" onClick={closeDialog} className={`m-modal02-close02 ${classes.button}`}>
                   閉じる
-                </button>
-              </p>
+                  <Eject className={classes.rightIcon} />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -56,10 +92,11 @@ const PostDialog = (props) => {
 PostDialog.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   closeDialog: PropTypes.func,
+  classes: PropTypes.shape({}).isRequired,
 };
 
 PostDialog.defaultProps = {
   closeDialog: () => {},
 };
 
-export default PostDialog;
+export default withStyles(styles)(PostDialog);

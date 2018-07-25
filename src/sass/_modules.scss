@@ -646,17 +646,6 @@ $linkColor: #4374e0;
 	モーダル
 --------------------------------------------------*/
 
-/* 背景 */
-.m-modal01-bg {
-  background: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-}
-
 /* スレッドを作る */
 .m-modal01 {
   position: fixed;
@@ -721,14 +710,8 @@ $linkColor: #4374e0;
   right: 2%;
   width: 96%;
   z-index: 101;
-  &-container {
-    border: 1px solid #54ABEC;
-    background: #F7F7F7;
-    padding-bottom: 20px;
-  }
   &-inner {
     width: 100%;
-    padding: 0 2%;
     position: relative;
     box-sizing: border-box;
   }
@@ -739,7 +722,7 @@ $linkColor: #4374e0;
   &-close {
     position: absolute;
     top: 14px;
-    right: 2%;
+    right: 0;
   }
   &-icon {
     font-family: "IonIcons";
@@ -754,13 +737,7 @@ $linkColor: #4374e0;
     align-items: flex-end;
   }
   &-postName {
-    width: 151px;
-    border: 1px solid #ccc;
-    -webkit-appearance: none;
-    display: inline-block;
-    margin: 5px 5px 0 0;
-    padding: 5px;
-    border-radius: $border-radius;
+    width: 200px
   }
   &-postCount {
     margin-left: auto;
@@ -772,47 +749,16 @@ $linkColor: #4374e0;
     }
   }
   &-postTextarea {
-    border: 1px solid #ccc;
     width: 100%;
-    padding: 5px 1% 0;
     line-height: 1.4;
     font-size: 100%;
-    height: 156px;
-    max-height: 156px;
     -webkit-appearance: none;
-    display: block;
-    border-radius: $border-radius;
-    margin: 5px 0 10px;
-    resize: none;
-    box-sizing: border-box;
   }
   &-postSubmit {
-    background-color: #39424D;
-    border: 1px solid #39424D;
-    color: #fff;
-    font-size: 100%;
-    padding: 10px 0;
-    border-radius: $border-radius;
-    display: block;
     width: 100%;
-    line-height: 1;
-    &:hover {
-      cursor: pointer;
-    }
   }
   &-close02 {
-    a {
-      display: block;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      color: #666;
-      border-radius: $border-radius;
-      padding: 10px 0;
-      font-size: 100%;
-      margin-top: 30px;
-      text-decoration: none;
-      text-align: center;
-    }
+    width: 100%;
   }
   &-postReplyNumber.active {
     color: #2b87ae;

@@ -4,7 +4,7 @@ meteorで作ったwebアプリ「[仮想通貨ちゃん](https://kasoutsuukachan
 
 サーバー側はリポジトリを分けてRailsで作る予定。
 
-## 参考になったサイト
+## 参考サイト
 
 - [【react-router】ハマった「browserHistoryをhistoryに渡すと」「Failed to load resource: the server responded with a status of 404 (Not Found)」](https://kenjimorita.jp/react-router-browserhistory-history-failed-to-load-resource-the-server-responded-w/)
 - [サンプルでreact-router v4を理解してみよう。](https://qiita.com/park-jh/items/b4c7b16ea9eb0cf44942)
@@ -14,3 +14,4 @@ meteorで作ったwebアプリ「[仮想通貨ちゃん](https://kasoutsuukachan
 - [ES2016ではMath.powの代わりに**を使いましょう](https://hacknote.jp/archives/29041/)
 - [Router URL Params](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/06-params)
 - [material-ui Dialogs](https://material-ui.com/demos/dialogs/)
+- [material-ui icons list](https://material.io/tools/icons/?style=baseline)
