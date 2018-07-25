@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import DATE_FORMAT from '../../defines/Defines';
@@ -14,7 +15,7 @@ const PostsHome = (props) => {
       <ul className="m-postsList-block">
         {postList.map(p => (
           <li className="m-postsList-list" key={p.id}>
-            <a href={`/${p.ticker}`} className="m-postsList-link02">
+            <Link to={`/${p.ticker}`} className="m-postsList-link02">
               <div className="m-postsList-information">
                 <p className="m-postsList-name">
                   {p.name}
@@ -35,7 +36,7 @@ const PostsHome = (props) => {
                 </p>
                 <p className={`m-postsList-ticker m-postsList-${p.ticker}`} />
               </div>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
