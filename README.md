@@ -4,7 +4,7 @@ meteorで作ったwebアプリ「[仮想通貨ちゃん](https://kasoutsuukachan
 
 サーバー側はリポジトリを分けてRailsで作る予定。
 
-## 参考サイト
+## 参考
 
 - [【react-router】ハマった「browserHistoryをhistoryに渡すと」「Failed to load resource: the server responded with a status of 404 (Not Found)」](https://kenjimorita.jp/react-router-browserhistory-history-failed-to-load-resource-the-server-responded-w/)
 - [サンプルでreact-router v4を理解してみよう。](https://qiita.com/park-jh/items/b4c7b16ea9eb0cf44942)
