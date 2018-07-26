@@ -1,8 +1,8 @@
 # kasoutsuukachan_front
 
-meteorで作ったwebアプリ「[仮想通貨ちゃん](https://kasoutsuukachan.com/)」のフロント側をReactで構築する。
+meteorで作ったwebアプリ「[仮想通貨ちゃん](https://kasoutsuukachan.com/)」のフロント側をReactで構築する
 
-サーバー側はリポジトリを分けてRailsで作る予定。
+サーバー側はリポジトリを分けてRailsで作る予定
 
 ## 参考
 
