@@ -51,9 +51,6 @@ const PostDialog = (props) => {
                     margin="normal"
                   />
                   <p className="m-modal02-postReplyNumber"></p>
-                  <p className="m-modal02-postCount">
-                    300
-                  </p>
                 </div>
                 <div className="m-modal02-postInner">
                   <div>
@@ -67,6 +64,9 @@ const PostDialog = (props) => {
                       margin="normal"
                     />
                   </div>
+                  <p className="m-modal02-postCount">
+                    300
+                  </p>
                   <div>
                     <Button variant="contained" color="primary" className={`m-modal02-postSubmit ${classes.button}`}>
                       投稿

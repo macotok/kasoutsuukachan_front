@@ -732,18 +732,14 @@ $linkColor: #4374e0;
     text-decoration: none;
     line-height: 22px;
   }
-  &-postHeader {
-    display: flex;
-    align-items: flex-end;
-  }
   &-postName {
     width: 200px
   }
   &-postCount {
-    margin-left: auto;
     font-size: 85%;
     color: #666;
     line-height: 1;
+    text-align: right;
     &.red {
       color: #f00;
     }
