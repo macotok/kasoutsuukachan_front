@@ -90,12 +90,13 @@ const PostDialog = (props) => {
 };
 
 PostDialog.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool,
   closeDialog: PropTypes.func,
   classes: PropTypes.shape({}).isRequired,
 };
 
 PostDialog.defaultProps = {
+  isOpen: false,
   closeDialog: () => {},
 };
 

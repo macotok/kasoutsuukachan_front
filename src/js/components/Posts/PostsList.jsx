@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import ReplyButton from '../Utils/ReplyButton';
 import DATE_FORMAT from '../../defines/Defines';
 
 const PostsList = (props) => {
@@ -37,11 +38,7 @@ const PostsList = (props) => {
               <p className="m-postsList-iineCount">
                 {t.good}
               </p>
-              <p className="m-postsList-reply">
-                <button type="button" className="m-postsList-link m-postsList-replyLink">
-                  返信
-                </button>
-              </p>
+              <ReplyButton />
             </div>
           </li>
         ))
