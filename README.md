@@ -15,3 +15,4 @@ meteorで作ったwebアプリ「[仮想通貨ちゃん](https://kasoutsuukachan
 - [Router URL Params](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/06-params)
 - [material-ui Dialogs](https://material-ui.com/demos/dialogs/)
 - [material-ui icons list](https://material.io/tools/icons/?style=baseline)
+- [React router v4 route onchange event](https://stackoverflow.com/questions/43512450/react-router-v4-route-onchange-event)
