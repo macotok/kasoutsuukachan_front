@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class MoreText extends React.Component {
+class ReplyMoreText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,12 +45,12 @@ class MoreText extends React.Component {
   }
 }
 
-MoreText.propTypes = {
+ReplyMoreText.propTypes = {
   replyData: PropTypes.shape({}),
 };
 
-MoreText.defaultProps = {
+ReplyMoreText.defaultProps = {
   replyData: {},
 };
 
-export default MoreText;
+export default ReplyMoreText;
