@@ -19,7 +19,7 @@ function Transition(props) {
 }
 
 const PostDialog = (props) => {
-  const { isOpen, closeDialog, classes } = props;
+  const { isOpen, closeDialog, classes, replyData } = props;
 
   return (
     <div>
@@ -50,7 +50,12 @@ const PostDialog = (props) => {
                     className="m-modal02-postName"
                     margin="normal"
                   />
-                  <p className="m-modal02-postReplyNumber"></p>
+                  <p className="m-modal02-postReplyNumber">
+                    {replyData ? replyData.id : null}
+                  </p>
+                  <p>
+                    {replyData ? replyData.text : null}
+                  </p>
                 </div>
                 <div className="m-modal02-postInner">
                   <div>

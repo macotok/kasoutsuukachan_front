@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import PostDialog from './PostDialog';
 
 class ReplyButton extends React.Component {
@@ -21,6 +23,7 @@ class ReplyButton extends React.Component {
 
   render() {
     const { isDialogOpen } = this.state;
+    const { replyData } = this.props;
     return (
       <div>
         <p className="m-postsList-reply">
@@ -31,10 +34,22 @@ class ReplyButton extends React.Component {
         <PostDialog
           isOpen={isDialogOpen}
           closeDialog={this.closeDialog}
+          replyData={isDialogOpen ? replyData : null}
         />
       </div>
     );
   }
 }
 
-export default ReplyButton;
+ReplyButton.propTypes = {
+  replyData: PropTypes.shape({}).isRequired,
+};
+
+const mapStateToProps = (state, props) => {
+  const { postId } = props;
+  return {
+    replyData: (state.post).find(s => s.id === postId),
+  };
+};
+
+export default connect(mapStateToProps)(ReplyButton);

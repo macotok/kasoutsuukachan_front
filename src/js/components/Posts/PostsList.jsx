@@ -38,7 +38,9 @@ const PostsList = (props) => {
               <p className="m-postsList-iineCount">
                 {t.good}
               </p>
-              <ReplyButton />
+              <ReplyButton
+                postId={t.id}
+              />
             </div>
           </li>
         ))
