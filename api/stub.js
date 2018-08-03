@@ -26,7 +26,7 @@ for (let i = 0; i < 1000; i += 1) {
   db.post.push({
     id: i,
     name: faker.name.firstName(),
-    text: faker.random.words(),
+    text: faker.lorem.paragraphs(),
     replyNumber: null,
     replyBoolean: null,
     autoIncrement: i,

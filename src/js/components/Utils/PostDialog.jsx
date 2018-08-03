@@ -4,6 +4,7 @@ import { Dialog, Slide, TextField } from '@material-ui/core/';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Send, Eject } from '@material-ui/icons';
+import MoreText from './MoreText';
 
 const styles = theme => ({
   button: {
@@ -19,7 +20,12 @@ function Transition(props) {
 }
 
 const PostDialog = (props) => {
-  const { isOpen, closeDialog, classes, replyData } = props;
+  const {
+    isOpen,
+    closeDialog,
+    classes,
+    replyData,
+  } = props;
 
   return (
     <div>
@@ -40,6 +46,9 @@ const PostDialog = (props) => {
                 </button>
               </p>
               <form className="m-modal02-post">
+                <MoreText
+                  replyData={replyData}
+                />
                 <div className="m-modal02-postHeader">
                   <TextField
                     autoComplete="off"
@@ -50,12 +59,6 @@ const PostDialog = (props) => {
                     className="m-modal02-postName"
                     margin="normal"
                   />
-                  <p className="m-modal02-postReplyNumber">
-                    {replyData ? replyData.id : null}
-                  </p>
-                  <p>
-                    {replyData ? replyData.text : null}
-                  </p>
                 </div>
                 <div className="m-modal02-postInner">
                   <div>
@@ -98,11 +101,13 @@ PostDialog.propTypes = {
   isOpen: PropTypes.bool,
   closeDialog: PropTypes.func,
   classes: PropTypes.shape({}).isRequired,
+  replyData: PropTypes.shape({}),
 };
 
 PostDialog.defaultProps = {
   isOpen: false,
   closeDialog: () => {},
+  replyData: {},
 };
 
 export default withStyles(styles)(PostDialog);

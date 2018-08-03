@@ -32,7 +32,9 @@ $eos: url(../images/icons/eos.svg);
 /* border-radius */
 $border-radius: 3px;
 $keyColor: #1253A4; // 濃い青 「いいね」「loader」「スレッド追加」で使用
+$keyColor02: #2b87ae; // 返信のテキスト
 $linkColor: #4374e0;
+$backgroundColor: #c5dee9;  // 返信の背景色
 
 /*------------------------------------------------
 	ヘッダー
@@ -310,8 +312,8 @@ $linkColor: #4374e0;
   &-ticker {
     display: inline-block;
     padding: 3px 0;
-    background: #c5dee9;
-    color: #2b87ae;
+    background: $backgroundColor;
+    color: $keyColor02;
     border-radius: $border-radius;
     font-size: 80%;
     text-align: center;
@@ -411,7 +413,7 @@ $linkColor: #4374e0;
   &-submit {
   	margin: 0 0 6px 8px;
     a {
-      background-color: #2b87ae;
+      background-color: $keyColor02;
       &:hover {
         background-color: #00A4BB;
       }
@@ -570,7 +572,7 @@ $linkColor: #4374e0;
     align-items: center;
   }
   &-circle {
-    background-color: #2b87ae;
+    background-color: $keyColor02;
     border-radius: 30px;
     width: 26px;
     height: 26px;
@@ -756,11 +758,30 @@ $linkColor: #4374e0;
   &-close02 {
     width: 100%;
   }
-  &-postReplyNumber.active {
-    color: #2b87ae;
-    background: #c5dee9;
-    padding: 5px 7px;
+  &-postReply {
+    border: 1px solid #ddd;
     border-radius: $border-radius;
+    padding: 10px;
+    margin-top: 20px;
+    &-number {
+      color: $keyColor02;
+      background: $backgroundColor;
+      padding: 5px 7px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    &-text.hide {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &-button {
+      color: $keyColor;
+      background-color: #efefef;
+      padding: 5px 7px;
+      border-radius: $border-radius;
+      margin: 10px auto 0;
+    }
   }
 }
 
@@ -850,10 +871,10 @@ $linkColor: #4374e0;
     }
   }
   &-replyLink.active {
-    color: #2b87ae;
+    color: $keyColor02;
     font-size: 75%;
     text-decoration: none;
-    background: #c5dee9;
+    background: $backgroundColor;
     padding: 5px 7px;
     border-radius: $border-radius;
     cursor: pointer;
@@ -935,7 +956,7 @@ $linkColor: #4374e0;
     display: block;
     width: 200px;
     margin: 5px auto;
-    background-color: #2b87ae;
+    background-color: $keyColor02;
     color: #fff;
     text-align: center;
     padding: 5px 0;
@@ -1159,20 +1180,20 @@ $linkColor: #4374e0;
     font-size: 80%;
   }
   &-replyLink {
-    color: #2b87ae;
+    color: $keyColor02;
     font-size: 85%;
     text-decoration: none;
-    background: #c5dee9;
+    background: $backgroundColor;
     padding: 5px 7px;
     border-radius: 3px;
     cursor: pointer;
   }
   &-replyNum {
     .active {
-      color: #2b87ae;
+      color: $keyColor02;
       font-size: 75%;
       text-decoration: none;
-      background: #c5dee9;
+      background: $backgroundColor;
       padding: 5px 7px;
       border-radius: 3px;
       cursor: pointer;
