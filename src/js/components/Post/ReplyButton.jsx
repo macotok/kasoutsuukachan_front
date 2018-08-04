@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import PostDialog from './PostDialog';
+import PostDialog from '../Dialog/PostDialog';
 
 class ReplyButton extends React.Component {
   constructor(props) {

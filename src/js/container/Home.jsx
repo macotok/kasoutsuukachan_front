@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
-import ThreadList from '../components/ThreadList';
-import PostsHome from '../components/Posts/PostsHome';
+import ThreadList from '../components/Thread/ThreadList';
+import PostsHome from '../components/Post/PostsHome';
 import Footer from '../components/Footer';
 import LogoutButton from '../components/Utils/LogoutButton';
 
@@ -18,8 +18,8 @@ class Home extends React.Component {
     return (
       <div>
         <Header />
-        <LogoutButton />
         <ThreadList />
+        <LogoutButton />
         <PostsHome />
         <Footer
           isBackHome={false}

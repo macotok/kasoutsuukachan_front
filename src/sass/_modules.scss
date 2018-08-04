@@ -410,33 +410,22 @@ $backgroundColor: #c5dee9;  // 返信の背景色
 
 .m-threadEdit01 {
   display: flex;
+  margin-bottom: 10px;
   &-submit {
-  	margin: 0 0 6px 8px;
-    a {
+    margin: 0 10px 0 8px;
+    button {
       background-color: $keyColor02;
-      &:hover {
-        background-color: #00A4BB;
-      }
     }
   }
   &-delete {
-    margin-left: 10px;
-    a {
+    button {
       background-color: #ff0000;
-      &:hover {
-        background-color: #EE005F;
-      }
     }
   }
   &-link {
-    display: inline-block;
     color: #fff;
     padding: 5px 10px;
     border-radius: $border-radius;
-    line-height: 1;
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
 

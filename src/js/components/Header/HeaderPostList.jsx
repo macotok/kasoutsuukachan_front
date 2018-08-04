@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PostButton from '../Utils/PostButton';
+import PostButton from './PostButton';
 import { rate, priceShape, priceBoolean } from '../../libraries/Utils';
 
 const HeaderPostList = (props) => {

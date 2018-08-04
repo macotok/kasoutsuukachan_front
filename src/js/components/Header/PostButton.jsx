@@ -1,5 +1,5 @@
 import React from 'react';
-import PostDialog from './PostDialog';
+import PostDialog from '../Dialog/PostDialog';
 
 class PostButton extends React.Component {
   constructor(props) {

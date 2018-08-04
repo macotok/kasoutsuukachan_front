@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { rate, priceShape, priceBoolean } from '../libraries/Utils';
+import ThreadEdit from './ThreadEdit';
+import { rate, priceShape, priceBoolean } from '../../libraries/Utils';
 
 const ThreadList = (props) => {
   const { thread } = props;
@@ -28,6 +29,9 @@ const ThreadList = (props) => {
                 </p>
               </div>
             </Link>
+            <ThreadEdit
+              threadId={t.id}
+            />
           </li>
         ))}
       </ul>

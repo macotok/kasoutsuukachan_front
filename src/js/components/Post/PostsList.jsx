@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import ReplyButton from '../Utils/ReplyButton';
+import ReplyButton from './ReplyButton';
 import DATE_FORMAT from '../../defines/Defines';
 
 const PostsList = (props) => {

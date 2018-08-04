@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import HeaderPostList from '../components/Header/HeaderPostList';
 import PageScroll from '../components/Utils/PageScroll';
-import PostsList from '../components/Posts/PostsList';
+import PostsList from '../components/Post/PostsList';
 
 class PostList extends React.Component {
   componentDidMount() {
