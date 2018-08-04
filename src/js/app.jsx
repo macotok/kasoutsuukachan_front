@@ -21,6 +21,8 @@ const App = () => (
         <Route path="/about" component={Page.About} />
         <Route path="/terms" component={Page.Terms} />
         <Route path="/contact" component={Page.Contact} />
+        <Route path="/regist" component={Page.Regist} />
+        <Route path="/login" component={Page.Login} />
         <Route exact path="/:ticker" component={Page.PostList} />
       </Switch>
     </div>
