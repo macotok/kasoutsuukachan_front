@@ -4,6 +4,7 @@ import Header from '../components/Header/Header';
 import ThreadList from '../components/ThreadList';
 import PostsHome from '../components/Posts/PostsHome';
 import Footer from '../components/Footer';
+import LogoutButton from '../components/Utils/LogoutButton';
 
 class Home extends React.Component {
   componentWillMount() {
@@ -17,6 +18,7 @@ class Home extends React.Component {
     return (
       <div>
         <Header />
+        <LogoutButton />
         <ThreadList />
         <PostsHome />
         <Footer
