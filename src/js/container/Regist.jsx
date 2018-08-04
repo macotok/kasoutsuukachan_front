@@ -25,7 +25,7 @@ class Regist extends React.Component {
             <div>
               <TextField
                 label="ID"
-                type="text"
+                type="email"
                 name="id"
                 margin="normal"
                 defaultValue=""
