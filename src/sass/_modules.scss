@@ -968,43 +968,20 @@ $backgroundColor: #c5dee9;  // 返信の背景色
 }
 
 /*------------------------------------------------
-	ログイン画面
+	ログイン画面/登録画面
 --------------------------------------------------*/
 
-.at-form {
-  margin: 0 0 40px;
-  border-radius: 0;
-  padding: 0;
-  .control-label {
-    display: block;
-    margin: 0 0 5px;
-  }
-  .form-control {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    box-sizing:border-box;
-    font-size: 100%;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    border-radius: $border-radius;
-  }
-  #at-btn {
-    font-size: 100%;
-    margin: 0 0 0 auto;
+.m-form01 {
+  padding: 0 10% 20px;
+  &-btn {
     display: flex;
     justify-content: flex-end;
-    background-color: #39424D;
-    color: #fff;
-    border-radius: $border-radius;
-    border: none;
-    padding: 10px 30px;
+    margin: 20px 0 0;
   }
-  .at-signup-link,
-  .at-signin-link {
-    clear: right;
-    p {
-      text-align: center;
+  &-textField {
+    input {
+      padding: 5px;
+      font-size: 120%;
     }
   }
 }

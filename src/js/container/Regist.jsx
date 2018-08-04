@@ -21,30 +21,36 @@ class Regist extends React.Component {
           <h2 className="m-title01">
             アカウント登録
           </h2>
-          <div>
-            <TextField
-              autoComplete="off"
-              label="ID"
-              type="text"
-              name="id"
-              margin="normal"
-              defaultValue=""
-            />
-          </div>
-          <div>
-            <TextField
-              autoComplete="off"
-              label="PASSWORD"
-              type="password"
-              name="password"
-              margin="normal"
-              defaultValue=""
-            />
-          </div>
-          <div>
-            <Button variant="contained" color="primary">
-              登録
-            </Button>
+          <div className="m-form01">
+            <div>
+              <TextField
+                label="ID"
+                type="text"
+                name="id"
+                margin="normal"
+                defaultValue=""
+                fullWidth
+                required
+                className="m-form01-textField"
+              />
+            </div>
+            <div>
+              <TextField
+                label="PASSWORD"
+                type="password"
+                name="password"
+                margin="normal"
+                defaultValue=""
+                fullWidth
+                required
+                className="m-form01-textField"
+              />
+            </div>
+            <div className="m-form01-btn">
+              <Button variant="contained" color="primary">
+                登録
+              </Button>
+            </div>
           </div>
           <Footer />
         </div>
