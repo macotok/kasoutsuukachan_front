@@ -20,7 +20,7 @@ const ThreadEdit = (props) => {
 };
 
 ThreadEdit.propTypes = {
-  threadId: PropTypes.string.isRequired,
+  threadId: PropTypes.number.isRequired,
 };
 
 export default ThreadEdit;

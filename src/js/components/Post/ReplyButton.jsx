@@ -34,7 +34,7 @@ class ReplyButton extends React.Component {
         <PostDialog
           isOpen={isDialogOpen}
           closeDialog={this.closeDialog}
-          replyData={isDialogOpen ? replyData : null}
+          replyData={replyData}
         />
       </div>
     );

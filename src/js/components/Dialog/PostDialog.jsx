@@ -4,7 +4,7 @@ import { Dialog, Slide, TextField } from '@material-ui/core/';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Send, Eject } from '@material-ui/icons';
-import ReplyMoreText from './ReplyMoreText';
+import ReplyText from './ReplyText';
 
 const styles = theme => ({
   button: {
@@ -46,7 +46,7 @@ const PostDialog = (props) => {
                 </button>
               </p>
               <form className="m-modal02-post">
-                <ReplyMoreText
+                <ReplyText
                   replyData={replyData}
                 />
                 <div className="m-modal02-postHeader">
