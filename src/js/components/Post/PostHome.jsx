@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import DATE_FORMAT from '../../defines/Defines';
+import { DATE_FORMAT } from '../../defines/Defines';
 
 const PostHome = (props) => {
   const { postList } = props;

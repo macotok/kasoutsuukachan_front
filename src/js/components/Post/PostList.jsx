@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import ReplyButton from './ReplyButton';
 import ReplyNumber from './ReplyNumber';
-import DATE_FORMAT from '../../defines/Defines';
+import { DATE_FORMAT } from '../../defines/Defines';
 
 const PostList = (props) => {
   const { tickerPostList } = props;

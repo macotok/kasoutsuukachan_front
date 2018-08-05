@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Eject } from '@material-ui/icons';
 import moment from 'moment';
-import DATE_FORMAT from '../../defines/Defines';
+import { DATE_FORMAT } from '../../defines/Defines';
 import ReplyNumber from '../Post/ReplyNumber';
 import ReplyButton from '../Post/ReplyButton';
 
