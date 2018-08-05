@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
 import ThreadList from '../components/Thread/ThreadList';
-import PostsHome from '../components/Post/PostsHome';
+import PostsHome from '../components/Post/PostHome';
 import Footer from '../components/Footer';
 import LogoutButton from '../components/Utils/LogoutButton';
 

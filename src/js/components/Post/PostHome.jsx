@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import DATE_FORMAT from '../../defines/Defines';
 
-const PostsHome = (props) => {
+const PostHome = (props) => {
   const { postList } = props;
   return (
     <div className="m-postsList m-postsListTop">
@@ -44,11 +44,11 @@ const PostsHome = (props) => {
   );
 };
 
-PostsHome.propTypes = {
+PostHome.propTypes = {
   postList: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
-PostsHome.defaultProps = {
+PostHome.defaultProps = {
   postList: [],
 };
 
@@ -59,4 +59,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(PostsHome);
+export default connect(mapStateToProps)(PostHome);

@@ -5,7 +5,7 @@ import moment from 'moment';
 import ReplyButton from './ReplyButton';
 import DATE_FORMAT from '../../defines/Defines';
 
-const PostsList = (props) => {
+const PostList = (props) => {
   const { tickerPostList } = props;
   return (
     <div className="m-postsList">
@@ -23,9 +23,17 @@ const PostsList = (props) => {
                 {moment(t.updateAt).format(DATE_FORMAT)}
               </p>
             </div>
-            <p className="m-postsList-replyNum">
-              <button type="button" className="m-postsList-link" />
-            </p>
+            {
+              t.replyNumber
+                ? (
+                  <p className="m-postsList-replyNum">
+                    <button type="button" className="m-postsList-replyNum-link">
+                      {t.replyNumber}
+                    </button>
+                  </p>
+                )
+                : null
+            }
             <p className="m-postsList-text">
               {t.text}
             </p>
@@ -50,11 +58,11 @@ const PostsList = (props) => {
   );
 };
 
-PostsList.propTypes = {
+PostList.propTypes = {
   tickerPostList: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
-PostsList.defaultProps = {
+PostList.defaultProps = {
   tickerPostList: [],
 };
 
@@ -70,4 +78,4 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(PostsList);
+export default connect(mapStateToProps)(PostList);

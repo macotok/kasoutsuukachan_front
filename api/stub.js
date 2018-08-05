@@ -1,4 +1,7 @@
 import faker from 'faker';
+import numberOrNull from './libraries';
+
+const postNumber = 1000;
 
 const db = {
   thread: [],
@@ -22,17 +25,16 @@ for (let i = 0; i < ticker.length; i += 1) {
   });
 }
 
-for (let i = 0; i < 1000; i += 1) {
+for (let i = 0; i < postNumber; i += 1) {
   db.post.push({
     id: i,
     name: faker.name.firstName(),
     text: faker.lorem.paragraphs(),
-    replyNumber: null,
-    replyBoolean: null,
+    replyNumber: numberOrNull(postNumber - 1, 2),
     autoIncrement: i,
     threadId: db.thread[faker.random.number(db.thread.length - 1)].id,
     ticker: ticker[faker.random.number(ticker.length - 1)],
-    good: faker.random.number(100),
+    good: faker.random.number(postNumber),
     createdAt: faker.date.past(),
     updateAt: faker.date.future(),
   });
