@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import ReplyButton from './ReplyButton';
+import ReplyNumber from './ReplyNumber';
 import DATE_FORMAT from '../../defines/Defines';
 
 const PostList = (props) => {
@@ -26,11 +27,9 @@ const PostList = (props) => {
             {
               t.replyNumber
                 ? (
-                  <p className="m-postsList-replyNum">
-                    <button type="button" className="m-postsList-replyNum-link">
-                      {t.replyNumber}
-                    </button>
-                  </p>
+                  <ReplyNumber
+                    replyNumber={t.replyNumber}
+                  />
                 )
                 : null
             }

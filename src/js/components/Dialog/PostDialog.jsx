@@ -34,13 +34,13 @@ const PostDialog = (props) => {
         open={isOpen}
         TransitionComponent={Transition}
       >
-        <div className="m-modal02 is-modal">
+        <div className="m-modal02">
           <div className="m-modal02-container">
             <div className="m-modal02-inner">
               <h2 className="m-modal02-title">
                 投稿する
               </h2>
-              <p className="m-modal02-close is-modalClose">
+              <p className="m-modal02-close">
                 <button type="button" className="m-modal02-icon" onClick={closeDialog}>
                   &#xf2d7;
                 </button>

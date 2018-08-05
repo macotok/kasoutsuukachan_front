@@ -1133,6 +1133,9 @@ $backgroundColor: #c5dee9;  // 返信の背景色
     color: #999;
     margin-bottom: 5px;
     display: flex;
+    .m-modal02 & {
+      margin-top: 20px;
+    }
   }
   &-increment {
     margin-right: 5px;
