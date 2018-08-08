@@ -7,9 +7,11 @@ import ReplyNumber from './ReplyNumber';
 import { DATE_FORMAT } from '../../defines/Defines';
 
 const PostList = (props) => {
-  const { tickerPostList } = props;
+  const { tickerPostList, headerHeight } = props;
+  const headerHeightChange = headerHeight || false;
+  const pageScrollPosition = { paddingTop: headerHeightChange };
   return (
-    <div className="m-postsList">
+    <div className="m-postsList" style={pageScrollPosition}>
       <ul className="m-postsList-block">
         {tickerPostList.map(t => (
           <li className="m-postsList-list" key={t.id}>
@@ -59,6 +61,10 @@ const PostList = (props) => {
 
 PostList.propTypes = {
   tickerPostList: PropTypes.arrayOf(PropTypes.shape({})),
+  headerHeight: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
 };
 
 PostList.defaultProps = {

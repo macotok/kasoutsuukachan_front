@@ -1013,6 +1013,7 @@ $backgroundColor: #c5dee9;  // 返信の背景色
 .m-postsList {
   width: 100%;
   overflow: hidden;
+  padding-top: 65px;
   &-list {
     border-bottom: 1px solid #efefef;
     padding: 10px;

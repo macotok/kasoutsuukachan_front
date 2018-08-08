@@ -32,7 +32,10 @@ class PostList extends React.Component {
       <div>
         <HeaderPostList {...this.props} />
         <PageScroll headerHeight={headerHeightChange} />
-        <PostsList {...this.props} />
+        <PostsList
+          headerHeight={headerHeightChange}
+          {...this.props}
+        />
       </div>
     );
   }
