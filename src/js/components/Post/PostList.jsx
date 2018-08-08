@@ -55,6 +55,7 @@ const PostList = (props) => {
         ))
         }
       </ul>
+      <div id="m-postsList-last" />
     </div>
   );
 };

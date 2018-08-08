@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { PAGE_SCROLL_POSITION_PADDING } from '../../defines/Defines';
 
 const PageScroll = (props) => {
@@ -9,14 +10,14 @@ const PageScroll = (props) => {
   return (
     <div className="m-pageScroll" style={pageScrollPosition}>
       <div className="m-pageScroll-icon">
-        <button type="button" className="m-pageScroll-link  m-pageScroll-up">
+        <AnchorLink href="#app" className="m-pageScroll-link  m-pageScroll-up">
           &#xf366;
-        </button>
+        </AnchorLink>
       </div>
       <div className="m-pageScroll-icon">
-        <button type="button" className="m-pageScroll-link m-pageScroll-down">
+        <AnchorLink href="#m-postsList-last" className="m-pageScroll-link m-pageScroll-down">
           &#xf35d;
-        </button>
+        </AnchorLink>
       </div>
     </div>
   );
