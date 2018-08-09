@@ -6,6 +6,7 @@ import { Send } from '@material-ui/icons';
 import ReplyText from '../Dialog/ReplyText';
 import NameTextField from '../Form/NameTextField';
 import PostTextField from '../Form/PostTextField';
+import validate from '../../libraries/Validate';
 
 const PostForm = (props) => {
   const { classes, replyData } = props;
@@ -24,7 +25,7 @@ const PostForm = (props) => {
       <div className="m-modal02-postInner">
         <div>
           <Field
-            name="text"
+            name="post"
             component={PostTextField}
             label="投稿"
           />
@@ -54,4 +55,5 @@ PostForm.defaultProps = {
 
 export default reduxForm({
   form: 'PostForm',
+  validate,
 })(PostForm);
