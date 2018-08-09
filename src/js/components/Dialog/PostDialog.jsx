@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dialog, Slide, TextField } from '@material-ui/core/';
+import { Dialog, Slide } from '@material-ui/core/';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { Send, Eject } from '@material-ui/icons';
-import ReplyText from './ReplyText';
+import { Eject } from '@material-ui/icons';
+import PostForm from '../Post/PostForm';
 
 const styles = theme => ({
   button: {
@@ -24,7 +24,6 @@ const PostDialog = (props) => {
     isOpen,
     closeDialog,
     classes,
-    replyData,
   } = props;
 
   return (
@@ -45,44 +44,7 @@ const PostDialog = (props) => {
                   &#xf2d7;
                 </button>
               </p>
-              <form className="m-modal02-post">
-                <ReplyText
-                  replyData={replyData}
-                />
-                <div className="m-modal02-postHeader">
-                  <TextField
-                    autoComplete="off"
-                    label="名前"
-                    type="text"
-                    name="name"
-                    placeholder="名無しの仮想通貨ちゃん"
-                    className="m-modal02-postName"
-                    margin="normal"
-                  />
-                </div>
-                <div className="m-modal02-postInner">
-                  <div>
-                    <TextField
-                      label="投稿"
-                      name="text"
-                      multiline
-                      rows="10"
-                      rowsMax="10"
-                      className="m-modal02-postTextarea"
-                      margin="normal"
-                    />
-                  </div>
-                  <p className="m-modal02-postCount">
-                    300
-                  </p>
-                  <div>
-                    <Button variant="contained" color="primary" className={`m-modal02-postSubmit ${classes.button}`}>
-                      投稿
-                      <Send className={classes.rightIcon} />
-                    </Button>
-                  </div>
-                </div>
-              </form>
+              <PostForm {...props} />
               <div>
                 <Button variant="contained" color="default" onClick={closeDialog} className={`m-modal02-close02 ${classes.button}`}>
                   閉じる
@@ -101,13 +63,11 @@ PostDialog.propTypes = {
   isOpen: PropTypes.bool,
   closeDialog: PropTypes.func,
   classes: PropTypes.shape({}).isRequired,
-  replyData: PropTypes.shape({}),
 };
 
 PostDialog.defaultProps = {
   isOpen: false,
   closeDialog: () => {},
-  replyData: {},
 };
 
 export default withStyles(styles)(PostDialog);

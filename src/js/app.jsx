@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 import { Provider } from 'react-redux';
 import Reducer from './reducers';
 import Page from './container';
@@ -9,6 +10,7 @@ import Page from './container';
 const allReducers = combineReducers({
   thread: Reducer.Thread,
   post: Reducer.Post,
+  form: formReducer,
 });
 
 const store = createStore(allReducers);
