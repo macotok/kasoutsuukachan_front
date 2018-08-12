@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Button from '@material-ui/core/Button';
 import { Send } from '@material-ui/icons';
@@ -9,9 +11,12 @@ import PostTextField from '../Form/PostTextField';
 import validate from '../../libraries/Validate';
 
 const PostForm = (props) => {
-  const { classes, replyData } = props;
+  const {
+    classes, replyData, handleSubmit, textLength,
+  } = props;
+  const textLengthCheck = 300 - textLength;
   return (
-    <form className="m-modal02-post">
+    <form onSubmit={handleSubmit} className="m-modal02-post">
       <ReplyText
         replyData={replyData}
       />
@@ -31,10 +36,10 @@ const PostForm = (props) => {
           />
         </div>
         <p className="m-modal02-postCount">
-          300
+          {textLengthCheck}
         </p>
         <div>
-          <Button variant="contained" color="primary" className={`m-modal02-postSubmit ${classes.button}`}>
+          <Button type="submit" variant="contained" color="primary" className={`m-modal02-postSubmit ${classes.button}`}>
             投稿
             <Send className={classes.rightIcon} />
           </Button>
@@ -47,13 +52,29 @@ const PostForm = (props) => {
 PostForm.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   replyData: PropTypes.shape({}),
+  handleSubmit: PropTypes.func.isRequired,
+  textLength: PropTypes.number.isRequired,
 };
 
 PostForm.defaultProps = {
   replyData: {},
 };
 
-export default reduxForm({
-  form: 'PostForm',
-  validate,
-})(PostForm);
+const mapStateToProps = (state) => {
+  const formValues = state.form.PostForm.values;
+  const hasFormInput = formValues || null;
+  const hasTextInput = hasFormInput ? formValues.post : null;
+  return {
+    textLength: hasTextInput ? (formValues.post).length : 0,
+  };
+};
+
+const enhance = compose(
+  reduxForm({
+    form: 'PostForm',
+    validate,
+  }),
+  connect(mapStateToProps),
+);
+
+export default enhance(PostForm);

@@ -19,6 +19,10 @@ function Transition(props) {
   return <Slide direction="up" {...props} />;
 }
 
+const submit = (values) => {
+  console.log(values);
+};
+
 const PostDialog = (props) => {
   const {
     isOpen,
@@ -44,7 +48,7 @@ const PostDialog = (props) => {
                   &#xf2d7;
                 </button>
               </p>
-              <PostForm {...props} />
+              <PostForm onSubmit={submit} {...props} />
               <div>
                 <Button variant="contained" color="default" onClick={closeDialog} className={`m-modal02-close02 ${classes.button}`}>
                   閉じる

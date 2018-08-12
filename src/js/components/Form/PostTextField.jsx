@@ -23,6 +23,7 @@ const PostTextField = ({
         className="m-modal02-postTextarea"
         margin="normal"
         {...input}
+        onChange={e => input.onChange(e.target.value)}
       />
       <p style={styles}>
         {isError ? error : null}
