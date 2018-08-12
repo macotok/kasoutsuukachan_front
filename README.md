@@ -16,3 +16,4 @@ meteorで作ったwebアプリ「[仮想通貨ちゃん](https://kasoutsuukachan
 - [material-ui Dialogs](https://material-ui.com/demos/dialogs/)
 - [material-ui icons list](https://material.io/tools/icons/?style=baseline)
 - [React router v4 route onchange event](https://stackoverflow.com/questions/43512450/react-router-v4-route-onchange-event)
+- [MaterialUiでvalidate](https://redux-form.com/7.4.2/examples/material-ui/)
