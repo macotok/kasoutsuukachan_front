@@ -9,12 +9,13 @@ import ReplyText from '../Dialog/ReplyText';
 import NameTextField from '../Form/NameTextField';
 import PostTextField from '../Form/PostTextField';
 import validate from '../../libraries/Validate';
+import { POST_MAX_LENGTH } from '../../defines/Defines';
 
 const PostForm = (props) => {
   const {
     classes, replyData, handleSubmit, textLength,
   } = props;
-  const textLengthCheck = 300 - textLength;
+  const textLengthCheck = POST_MAX_LENGTH - textLength;
   return (
     <form onSubmit={handleSubmit} className="m-modal02-post">
       <ReplyText
