@@ -2,10 +2,10 @@ import { REQUIRED, POST_ERROR_MESSAGE } from '../defines/Defines';
 
 const validate = (values) => {
   const errors = {};
-  const Fields = [
+  const requiredFields = [
     'post',
   ];
-  Fields.forEach((field) => {
+  requiredFields.forEach((field) => {
     if (!values[field]) {
       errors[field] = REQUIRED;
     }
