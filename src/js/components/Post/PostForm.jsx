@@ -1,19 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
 import Button from '@material-ui/core/Button';
 import { Send } from '@material-ui/icons';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { Field, reduxForm } from 'redux-form';
 import ReplyText from '../Dialog/ReplyText';
 import NameTextField from '../Form/NameTextField';
 import PostTextField from '../Form/PostTextField';
-import validate from '../../libraries/Validate';
 import { POST_MAX_LENGTH } from '../../defines/Defines';
+import validate from '../../libraries/Validate';
 
 const PostForm = (props) => {
   const {
-    classes, replyData, handleSubmit, textLength,
+    classes,
+    replyData,
+    handleSubmit,
+    textLength,
   } = props;
   const textLengthCheck = POST_MAX_LENGTH - textLength;
   return (
@@ -52,8 +55,8 @@ const PostForm = (props) => {
 
 PostForm.propTypes = {
   classes: PropTypes.shape({}).isRequired,
-  replyData: PropTypes.shape({}),
   handleSubmit: PropTypes.func.isRequired,
+  replyData: PropTypes.shape({}),
   textLength: PropTypes.number.isRequired,
 };
 
@@ -65,6 +68,7 @@ const mapStateToProps = (state) => {
   const formValues = state.form.PostForm.values;
   const hasFormInput = formValues || null;
   const hasTextInput = hasFormInput ? formValues.post : null;
+  // redux-formから残りの文字数を生成
   return {
     textLength: hasTextInput ? (formValues.post).length : 0,
   };

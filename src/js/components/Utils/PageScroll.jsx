@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { PAGE_SCROLL_POSITION_PADDING } from '../../defines/Defines';
 

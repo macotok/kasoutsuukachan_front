@@ -61,11 +61,11 @@ const PostList = (props) => {
 };
 
 PostList.propTypes = {
-  tickerPostList: PropTypes.arrayOf(PropTypes.shape({})),
   headerHeight: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
   ]).isRequired,
+  tickerPostList: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 PostList.defaultProps = {

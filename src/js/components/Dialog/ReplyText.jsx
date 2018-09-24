@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 class ReplyText extends React.Component {
   constructor(props) {
@@ -7,10 +7,10 @@ class ReplyText extends React.Component {
     this.state = {
       isTextHide: true,
     };
-    this.repqlyTextOpen = this.repqlyTextOpen.bind(this);
+    this.replyTextOpen = this.replyTextOpen.bind(this);
   }
 
-  repqlyTextOpen() {
+  replyTextOpen() {
     const { isTextHide } = this.state;
     this.setState({ isTextHide: !isTextHide });
   }
@@ -18,7 +18,7 @@ class ReplyText extends React.Component {
   render() {
     const { replyData } = this.props;
     const { isTextHide } = this.state;
-    const isMOreText = { display: isTextHide ? 'block' : 'none' };
+    const isMoreText = { display: isTextHide ? 'block' : 'none' };
 
     return (
       Object.values(replyData).length
@@ -33,8 +33,8 @@ class ReplyText extends React.Component {
             <button
               type="button"
               className="m-modal02-postReply-button"
-              onClick={this.repqlyTextOpen}
-              style={isMOreText}
+              onClick={this.replyTextOpen}
+              style={isMoreText}
             >
               もっと読む
             </button>
