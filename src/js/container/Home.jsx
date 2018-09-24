@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Footer from '../components/Footer';
 import Header from '../components/Header/Header';
-import PostsHome from '../components/Post/PostHome';
+import PostHome from '../components/Post/PostHome';
 import ThreadList from '../components/Thread/ThreadList';
 import LogoutButton from '../components/Utils/LogoutButton';
 
@@ -20,7 +20,7 @@ class Home extends React.Component {
         <Header />
         <ThreadList />
         <LogoutButton />
-        <PostsHome />
+        <PostHome />
         <Footer
           isBackHome={false}
         />

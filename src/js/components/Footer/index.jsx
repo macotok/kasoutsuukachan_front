@@ -1,9 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import BackHome from './BackHome';
-import Sns from './Sns';
-import Nav from './Nav';
 import CopyRight from './CopyRight';
+import Nav from './Nav';
+import Sns from './Sns';
 
 const Footer = (props) => {
   const { isBackHome } = props;

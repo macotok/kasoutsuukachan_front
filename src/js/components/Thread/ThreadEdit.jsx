@@ -6,7 +6,7 @@ const ThreadEdit = (props) => {
   return (
     <div className="m-threadEdit01">
       <div className="m-threadEdit01-submit">
-        <button className="m-threadEdit01-link" type="button" data-threadId={threadId}>
+        <button className="m-threadEdit01-link" type="button" data-threadid={threadId}>
           編集
         </button>
       </div>

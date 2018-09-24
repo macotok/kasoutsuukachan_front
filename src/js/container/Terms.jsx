@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer';
+import { SITE_URL} from '../defines/Defines';
 
 class Terms extends React.Component {
   componentWillMount() {
@@ -49,9 +50,9 @@ class Terms extends React.Component {
                       1.本利用規約において使用する用語の意義は、次の各号に定めるとおりとします。
                       <ul className="m-list01-listBLock03">
                         <li className="m-list01-listText02">
-                          a.本サイト：ウェブサイト「仮想通貨.ch」（
+                          a.本サイト：ウェブサイト「仮想通貨ちゃん」（
                           <Link to="/" className="m-list01-link">
-                            https://kasoutsuukachan.com/
+                            {SITE_URL}
                           </Link>
                           ）をいいます。
                         </li>
