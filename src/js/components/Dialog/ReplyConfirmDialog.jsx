@@ -1,13 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable import/no-cycle */
 import { Dialog, Slide } from '@material-ui/core/';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 import { Eject } from '@material-ui/icons';
 import moment from 'moment';
-import { DATE_FORMAT } from '../../defines/Defines';
-import ReplyNumber from '../Post/ReplyNumber';
+import PropTypes from 'prop-types';
+import React from 'react';
 import ReplyButton from '../Post/ReplyButton';
+import ReplyNumber from '../Post/ReplyNumber';
+import { DATE_FORMAT } from '../../defines/Defines';
 
 const styles = theme => ({
   button: {
@@ -99,15 +100,14 @@ const ReplyConfirmDialog = (props) => {
 };
 
 ReplyConfirmDialog.propTypes = {
-  isOpen: PropTypes.bool,
-  closeDialog: PropTypes.func,
   classes: PropTypes.shape({}).isRequired,
+  closeDialog: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool,
   replyData: PropTypes.shape({}),
 };
 
 ReplyConfirmDialog.defaultProps = {
   isOpen: false,
-  closeDialog: () => {},
   replyData: {},
 };
 

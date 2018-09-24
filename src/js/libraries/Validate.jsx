@@ -1,4 +1,4 @@
-import { REQUIRED, POST_ERROR_MESSAGE } from '../defines/Defines';
+import { POST_ERROR_MESSAGE, POST_MAX_LENGTH, REQUIRED } from '../defines/Defines';
 
 const validate = (values) => {
   const errors = {};
@@ -13,7 +13,7 @@ const validate = (values) => {
 
   const hasPostInput = values.post || null;
   if (hasPostInput) {
-    if (hasPostInput.length > 300) {
+    if (hasPostInput.length > POST_MAX_LENGTH) {
       errors.post = POST_ERROR_MESSAGE;
     }
   }

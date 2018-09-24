@@ -1,5 +1,6 @@
-import React from 'react';
+/* eslint-disable import/no-cycle */
 import PropTypes from 'prop-types';
+import React from 'react';
 import { connect } from 'react-redux';
 import ReplyConfirmDialog from '../Dialog/ReplyConfirmDialog';
 
