@@ -15,12 +15,13 @@ class PostList extends React.Component {
 
   componentDidMount() {
     const { history } = this.props;
+    // ページ最下部から表示
     if (history.action !== 'POP') {
       const app = document.getElementById('app');
       window.scrollTo(0, app.scrollHeight);
     }
-    const headerElement = document.querySelector('.m-header02');
-    const headerHeight = headerElement.clientHeight;
+    // ヘッダーの高さによってページスクロールと投稿一覧の位置を調整
+    const headerHeight = document.querySelector('.m-header02').clientHeight;
     if (headerHeight !== HEADER_HEIGHT) {
       this.setState({ headerHeightChange: headerHeight });
     }

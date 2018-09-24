@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { Dialog, Slide } from '@material-ui/core/';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 import { Eject } from '@material-ui/icons';
+import PropTypes from 'prop-types';
+import React from 'react';
 import PostForm from '../Post/PostForm';
 
 const styles = theme => ({
@@ -64,14 +64,13 @@ const PostDialog = (props) => {
 };
 
 PostDialog.propTypes = {
-  isOpen: PropTypes.bool,
-  closeDialog: PropTypes.func,
   classes: PropTypes.shape({}).isRequired,
+  closeDialog: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool,
 };
 
 PostDialog.defaultProps = {
   isOpen: false,
-  closeDialog: () => {},
 };
 
 export default withStyles(styles)(PostDialog);

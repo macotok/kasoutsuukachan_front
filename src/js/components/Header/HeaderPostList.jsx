@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PostButton from './PostButton';
 import { rate, priceShape, priceBoolean } from '../../libraries/Utils';
 
