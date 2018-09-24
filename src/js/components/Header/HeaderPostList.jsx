@@ -43,8 +43,7 @@ HeaderPostList.propTypes = {
 
 const mapStateToProps = (state, props) => {
   const { match } = props;
-  const threadList = state.thread;
-  const tickerList = threadList.find(t => (
+  const tickerList = state.thread.find(t => (
     t.ticker === match.params.ticker
   ));
 
