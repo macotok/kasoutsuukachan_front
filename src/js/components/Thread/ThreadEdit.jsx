@@ -1,12 +1,12 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 const ThreadEdit = (props) => {
   const { threadId } = props;
   return (
     <div className="m-threadEdit01">
       <div className="m-threadEdit01-submit">
-        <button className="m-threadEdit01-link" type="button" data-threadid={threadId}>
+        <button className="m-threadEdit01-link" type="button" data-threadId={threadId}>
           編集
         </button>
       </div>

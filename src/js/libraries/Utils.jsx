@@ -1,13 +1,18 @@
+/**
+ * 任意の桁で四捨五入
+ * @param num 四捨五入する値
+ * @param ten どの桁で四捨五入するか
+ * @returns 四捨五入した値
+ */
 const floor = (num, ten) => (
   Math.floor(num * (10 ** ten)) / (10 ** ten)
 );
 
-const commaShape = (num) => {
+const arrangeNotComma = (num) => {
   const commaCheck = String(num).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
   if (commaCheck.indexOf(',') !== -1) {
     const numberFloor = Math.floor(num);
-    const numberShape = String(numberFloor).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
-    return numberShape;
+    return String(numberFloor).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
   }
   return commaCheck;
 };
@@ -15,26 +20,21 @@ const commaShape = (num) => {
 const priceDifferenceCalc = (nowPrice, lastPrice) => {
   const calcDiff = nowPrice - lastPrice;
   const calc = (calcDiff / lastPrice) * 100;
-  const calcResult = floor(calc, 2);
-  return calcResult;
+  return floor(calc, 2);
 };
 
 // 昨日の値と比較して%で表示
 export const rate = (nowPrice, lastPrice) => {
   if (!lastPrice) return false;
   const calcResult = priceDifferenceCalc(nowPrice, lastPrice);
-  if (calcResult === 0) return false;
-  if (calcResult > 0) {
-    return `+${calcResult}%`;
-  }
-  return `${calcResult}%`;
+  const prefix = calcResult > 0 ? '+' : '';
+  return calcResult !== 0 && `${prefix}${calcResult}%`;
 };
 
 // 3桁以上はカンマをつける
 export const priceShape = (nowPrice) => {
   if (!nowPrice) return false;
-  const priceFloor = floor(nowPrice, 2);
-  return `${commaShape(priceFloor)}円`;
+  return `${arrangeNotComma(floor(nowPrice, 2))}円`;
 };
 
 // 昨日の値と比較してプラスかマイナスかでテキストの色を変える

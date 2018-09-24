@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/Header/Header';
-import ThreadList from '../components/Thread/ThreadList';
-import PostsHome from '../components/Post/PostHome';
 import Footer from '../components/Footer';
+import Header from '../components/Header/Header';
+import PostsHome from '../components/Post/PostHome';
+import ThreadList from '../components/Thread/ThreadList';
 import LogoutButton from '../components/Utils/LogoutButton';
 
 class Home extends React.Component {
