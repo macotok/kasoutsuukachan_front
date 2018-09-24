@@ -1,9 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header/Header';
 import Footer from '../components/Footer';
-import { SITE_URL} from '../defines/Defines';
+import Header from '../components/Header/Header';
+import { SITE_URL } from '../defines/Defines';
 
 class Terms extends React.Component {
   componentWillMount() {

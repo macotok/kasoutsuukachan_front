@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/Header/Header';
+import React from 'react';
 import Footer from '../components/Footer';
+import Header from '../components/Header/Header';
 
 class Contact extends React.Component {
   componentWillMount() {
@@ -12,6 +12,7 @@ class Contact extends React.Component {
   }
 
   render() {
+    const mailAddress = 'kasoutsuukachan@gmail.com';
     return (
       <div>
         <Header />
@@ -33,7 +34,7 @@ class Contact extends React.Component {
                 <dd className="m-list01-listText">
                   本サイトへのお問い合わせは、
                   <a href="mailto:kasoutsuukachan@gmail.com" className="m-list01-link">
-                    kasoutsuukachan@gmail.com
+                    {mailAddress}
                   </a>
                   までメールをお送りください。
                   <br />
@@ -53,7 +54,7 @@ class Contact extends React.Component {
                 </dt>
                 <dd className="m-list01-listText">
                   本サイトの投稿への削除要請がございましたら、「スレッドのタイトル」「URL」「削除を要請する理由」の3点をご記入の上、
-                  <a href="mailto:kasoutsuukachan@gmail.com" className="m-list01-link">
+                  <a href={`mailto:${mailAddress}`} className="m-list01-link">
                     kasoutsuukachan@gmail.com
                   </a>
                   までメールをお送りくださいませ。

@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/Header/Header';
+import React from 'react';
 import Footer from '../components/Footer';
+import Header from '../components/Header/Header';
 
 class About extends React.Component {
   componentWillMount() {

@@ -1,8 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import HeaderPostList from '../components/Header/HeaderPostList';
-import PageScroll from '../components/Utils/PageScroll';
 import PostsList from '../components/Post/PostList';
+import PageScroll from '../components/Utils/PageScroll';
 import { HEADER_HEIGHT } from '../defines/Defines';
 
 class PostList extends React.Component {

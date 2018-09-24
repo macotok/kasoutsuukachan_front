@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { TextField } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
-import Header from '../components/Header/Header';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Footer from '../components/Footer';
+import Header from '../components/Header/Header';
 
 class Login extends React.Component {
   componentWillMount() {
