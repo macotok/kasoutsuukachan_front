@@ -8,17 +8,9 @@
     "build": "webpack --mode development --open",
     "lint": "eslint ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/m_kikuchi/kasoutsuukachan.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/m_kikuchi/kasoutsuukachan/issues"
-  },
-  "homepage": "https://gitlab.com/m_kikuchi/kasoutsuukachan#README",
   "dependencies": {
     "@material-ui/core": "^1.4.1",
     "@material-ui/icons": "^2.0.0",
